@@ -3,6 +3,32 @@ import { FaStar } from 'react-icons/fa'
 import { getProjects } from '../data/portfolioData'
 import ProjectHeaderImage from './ProjectHeaderImage'
 
+function ProjectVideo({ content, project }) {
+  const [isLoading, setIsLoading] = useState(true)
+
+  return (
+    <>
+      {isLoading && (
+        <div className="video-loading-indicator" role="status" aria-label={content.projectsUi.videoLoading ?? 'Loading preview'}>
+          <span className="video-loading-spinner" aria-hidden="true" />
+          <span>{content.projectsUi.videoLoading ?? 'Loading preview'}</span>
+        </div>
+      )}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        aria-label={`${project.name} ${content.projectsUi.projectPreview}`}
+        className={isLoading ? 'is-loading' : ''}
+        onCanPlay={() => setIsLoading(false)}
+      >
+        <source src={project.media} type="video/mp4" />
+      </video>
+    </>
+  )
+}
+
 export default function ProjectsSection({ content, selectedProjectName, onSelectProject, sectionRef }) {
   const [detailPanelHeight, setDetailPanelHeight] = useState(null)
   const projectDetailRef = useRef(null)
@@ -61,9 +87,7 @@ export default function ProjectsSection({ content, selectedProjectName, onSelect
           <article className="project-detail" ref={projectDetailRef} role="tabpanel">
             <div className={`project-detail-media ${selectedProject.accent}`}>
               {selectedProject.media ? (
-                <video autoPlay loop muted playsInline aria-label={`${selectedProject.name} ${content.projectsUi.projectPreview}`} key={selectedProject.media}>
-                  <source src={selectedProject.media} type="video/mp4" />
-                </video>
+                <ProjectVideo key={selectedProject.media} content={content} project={selectedProject} />
               ) : <span>{content.projectsUi.mediaPlaceholder}</span>}
             </div>
             <div className="project-detail-body">

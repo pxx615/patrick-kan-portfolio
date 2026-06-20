@@ -45,6 +45,7 @@ export const content = {
   projectsUi: {
     listLabel: 'Projects',
     mediaPlaceholder: 'Project GIF coming soon',
+    videoLoading: 'Loading preview',
     headerImageComingSoon: 'Header image coming soon',
     viewProject: 'View project',
     projectPreview: 'project preview',

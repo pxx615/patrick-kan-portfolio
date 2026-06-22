@@ -304,6 +304,43 @@
   color: #8fa0bf;
 }
 
+.header-menu .language-caret {
+  width: 11px;
+  height: 11px;
+  margin-left: auto;
+  transition: transform 180ms ease;
+}
+
+.header-menu .language-caret.is-open {
+  transform: rotate(180deg);
+}
+
+.language-options {
+  display: grid;
+  max-height: 0;
+  margin: 0 0 0 25px;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 180ms ease, margin 180ms ease, opacity 140ms ease;
+}
+
+.language-options.is-open {
+  max-height: 92px;
+  margin: 2px 0 5px 25px;
+  opacity: 1;
+}
+
+.header-menu .language-option {
+  padding: 8px 10px;
+  color: #aebfdd;
+  font-size: .8rem;
+}
+
+.header-menu .language-option.is-current {
+  color: var(--project-highlight);
+  background: var(--project-highlight-soft);
+}
+
 .about-section {
   max-width: 760px;
   margin: 0 auto 88px;
@@ -577,7 +614,7 @@
   background-color: #121b2b;
 }
 
-.project-detail-media span {
+.project-detail-media > span {
   padding: 7px 10px;
   border: 1px solid rgba(255, 255, 255, .16);
   border-radius: 99px;
@@ -600,21 +637,25 @@
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  padding: 8px 12px;
-  border: 1px solid rgba(255, 255, 255, .2);
-  border-radius: 99px;
-  background: rgba(3, 7, 17, .55);
+  padding: 10px 14px;
+  border: 1px solid color-mix(in srgb, var(--project-highlight) 42%, rgba(255, 255, 255, .16));
+  border-radius: 10px;
+  background: rgba(3, 7, 17, .62);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
   color: rgba(255, 255, 255, .9);
   font-size: .78rem;
+  font-weight: 700;
 }
 
 .video-loading-spinner {
-  width: 13px;
-  height: 13px;
-  border: 2px solid rgba(255, 255, 255, .3);
-  border-top-color: currentColor;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 2px solid rgba(255, 255, 255, .22);
+  border-top-color: var(--project-highlight);
+  border-right-color: var(--project-highlight);
   border-radius: 50%;
-  animation: video-loading-spin .7s linear infinite;
+  animation: video-loading-spin .8s linear infinite;
 }
 
 @keyframes video-loading-spin {

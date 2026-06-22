@@ -1523,6 +1523,14 @@
   transition: background 1s ease, background-color 1s ease, border-color 1s ease, color 1s ease, box-shadow 1s ease, opacity 1s ease;
 }
 
+.resume-page .technology-icon-tile {
+  transition: transform 120ms ease-out, background-color 120ms ease-out, box-shadow 120ms ease-out, border-color 120ms ease-out;
+}
+
+.resume-page .skill-card .tag-list li {
+  transition: transform 120ms ease-out, background-color 120ms ease-out, color 120ms ease-out, box-shadow 120ms ease-out;
+}
+
 @media (max-width: 600px) {
   .resume-page.menu-is-open .about-section {
     margin-top: 390px;
@@ -1537,7 +1545,7 @@
   }
 
   .resume-page>.header-menu {
-    top: 96px;
+    top: 110px;
   }
 
   .cat-gallery-item img {

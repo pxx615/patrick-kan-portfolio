@@ -20,7 +20,7 @@ export default function ExperienceCard({ content, item, linkedProject, onProject
       <div className={`company-mark ${item.color}`}>{item.mark}</div>
       <div className="experience-content">
         <h2>{item.role} <span aria-hidden="true">&#8226;</span> {item.company}</h2>
-        <p className="dates">{item.dates}{item.type !== 'education' && <><span aria-hidden="true">&#8226;</span> {content.site.location}</>}</p>
+        <p className="dates">{item.dates}{item.type !== 'education' && <><span aria-hidden="true">&#8226;</span> {item.location ?? content.site.location}</>}</p>
         <p className="description">{item.description}</p>
         <ul className="tag-list" aria-label={`${item.company} ${content.accessibility.technologies}`}>
           {item.tags.map((tag) => <li key={tag}>{tag}</li>)}

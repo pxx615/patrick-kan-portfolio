@@ -10,7 +10,7 @@ export const content = {
   navigation: { label: 'Sections de la page', about: 'À propos', projects: 'Projets', experience: 'Expérience', skills: 'Compétences' },
   menu: {
     open: 'Ouvrir le menu', close: 'Fermer le menu', quickActions: 'Actions rapides et navigation', actions: 'Actions',
-    lightMode: 'Passer au mode clair', darkMode: 'Passer au mode sombre', switchLanguage: 'Passer à l’anglais', copyEmail: 'Copier l’e-mail', emailCopied: 'E-mail copié', sendEmail: 'Envoyer un e-mail', navigation: 'Navigation', linkedIn: 'LinkedIn',
+    lightMode: 'Passer au mode clair', darkMode: 'Passer au mode sombre', changeLanguage: 'Changer de langue', languageEnglish: 'English', languageFrench: 'Français', copyEmail: 'Copier l’e-mail', emailCopied: 'E-mail copié', sendEmail: 'Envoyer un e-mail', navigation: 'Navigation', linkedIn: 'LinkedIn',
   },
   about: {
     label: 'À propos',

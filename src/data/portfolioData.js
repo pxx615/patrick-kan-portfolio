@@ -35,9 +35,6 @@ import facelinkHeader from '../assets/facelink/facelink-header.jpg'
 import facelinkVideo from '../assets/facelink/facelink-preview.mp4'
 import chatbotHeader from '../assets/chatbot/chatbot-header.png'
 import chatbotVideo from '../assets/chatbot/chatbot-preview.mp4'
-import { content } from './en'
-
-
 export const catImages = Object.entries(import.meta.glob('../assets/cat/*', { eager: true, import: 'default' }))
   .sort(([leftPath], [rightPath]) => leftPath.localeCompare(rightPath))
   .map(([, source]) => source)
@@ -45,53 +42,45 @@ export const catImages = Object.entries(import.meta.glob('../assets/cat/*', { ea
 export const getExperience = (content) => [
   {
     ...content.experience[0],
-    tags: ['React', 'Node.js', 'REST APIs', 'SQL', 'Security'],
     mark: 'E',
     color: 'orange',
     projectName: 'EWOWDAY',
   },
   {
     ...content.experience[1],
-    tags: ['ASP.NET', 'C#', 'JavaScript', 'SQL', 'xUnit'],
     mark: 'R',
     color: 'violet',
     projectName: 'Resiada',
   },
   {
     ...content.experience[2],
-    tags: ['Software Development', 'Agile', 'Web Applications'],
     mark: 'T',
     color: 'blue',
   },
   {
     ...content.experience[3],
-    tags: ['Mobile Development', 'Unreal Engine', 'UI/UX'],
     mark: 'MB',
     color: 'green',
     projectName: 'Matte Black Motion Capture',
   },
   {
     ...content.experience[4],
-    tags: ['VR/AR', 'Software Development', 'Research'],
     mark: 'S',
     color: 'cyan',
     projectName: 'AI Navigation Assistant',
   },
   {
     ...content.experience[5],
-    tags: ['IT Support', 'Systems', 'Troubleshooting'],
     mark: 'CRA',
     color: 'red',
   },
   {
     ...content.experience[6],
-    tags: ['Front-end', 'HTML/CSS', 'JavaScript', 'IT Support'],
     mark: 'M',
     color: 'pink',
   },
   {
     ...content.experience[7],
-    tags: ['System Development', 'Network Engineering'],
     mark: 'SC',
     color: 'education',
     type: 'education',
@@ -101,28 +90,24 @@ export const getExperience = (content) => [
 export const getProjects = (content) => [
   {
     ...content.projects[0],
-    tags: ['React', 'Node.js', 'SQL', 'REST APIs'],
     accent: 'orange',
     media: ewowdayVideo,
     headerImage: ewowdayHeader,
   },
   {
     ...content.projects[1],
-    tags: ['ASP.NET', 'C#', 'JavaScript', 'xUnit'],
     accent: 'violet',
     media: resiadaVideo,
     headerImage: resiadaHeader,
   },
   {
     ...content.projects[2],
-    tags: ['Mobile Development', 'Unreal Engine', 'UI/UX'],
     accent: 'green',
     media: facelinkVideo,
     headerImage: facelinkHeader,
   },
   {
     ...content.projects[3],
-    tags: ['Browser Extension', 'AI Chatbot'],
     accent: 'cyan',
     media: chatbotVideo,
     headerImage: chatbotHeader,
